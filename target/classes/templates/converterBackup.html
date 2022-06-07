@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body bgcolor="#ffffff">
+<h1>Select Game:</h1>
+<form action="#" th:action="@{/converter}" th:object="${converterModel}" method="POST">
+    <select id="multiplier" name="multiplier">
+        <option value="15.3980753753">Counter-Strike: Global Offensive</option>
+        <option value="15.3980753753">Apex Legends</option>
+        <option value="15.3980753753">Quake</option>
+        <option value="4.6194226126">Overwatch</option>
+        <option value="4.6194226126">Call of Duty: Modern Warfare</option>
+        <option value="4.6194226126">Call of Duty: Vanguard</option>
+        <option value="48.217167656049234">Valorant</option>
+        <option value="3.888014070758438">Fortnite</option>
+    </select>
+
+    <h2>Enter DPI:</h2>
+    <input type="text" th:field="*{dpi}" />
+
+    <h1>Find Cm/360:</h1>
+    <h2>Enter In-Game Sensitivity</h2>
+    <input type="text" th:field="*{sens}" />
+    <p>
+        <input type="submit" class="button" name="findCm" value="calculate" />
+        <output th:text="'Result: ' + ${result}" />
+    </p>
+
+    <h1>Find Sensitivity:</h1>
+    <h2>Enter Cm/360</h2>
+    <input type="text" th:field="*{cm}" />
+    <p>
+        <input type="submit" class="button" name="findSens" value="calculate" />
+        <output th:text="'Result: ' + ${result2}" />
+    </p>
+</form>
+</body>
+</html>

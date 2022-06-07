@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+             {
+                box-sizing: border-box;
+            }
+            /* Set additional styling options for the columns */
+            .column {
+                float: left;
+            }
+
+            /* Set width length for the left, right and middle columns */
+            .left {
+                width: 20%;
+            }
+
+            .middle {
+                width: 20%;
+            }
+
+            .right {
+                width: 20%;
+            }
+
+            .tutorial {
+                width: 40%;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+</head>
+<body>
+<form action="#" th:action="@{/converter}" th:object="${converterModel}" method="POST">
+    <div class="row">
+        <div class="column left">
+            <h1>Select Game</h1>
+            <select id="multiplier" name="multiplier">
+                <option value="15.3980753753">Counter-Strike: Global Offensive</option>
+                <option value="15.3980753753">Apex Legends</option>
+                <option value="15.3980753753">Quake</option>
+                <option value="4.6194226126">Overwatch</option>
+                <option value="4.6194226126">Call of Duty: Modern Warfare</option>
+                <option value="4.6194226126">Call of Duty: Vanguard</option>
+                <option value="48.217167656049234">Valorant</option>
+                <option value="3.888014070758438">Fortnite</option>
+            </select>
+
+            <h3>Enter DPI:</h3>
+            <input type="text" th:field="*{dpi}" />
+        </div>
+        <div class="column middle">
+            <h1>Find Cm/360</h1>
+            <h3>Enter In-Game Sensitivity:</h3>
+            <input type="text" th:field="*{sens}" />
+            <p>
+                <input type="submit" class="button" name="findCm" value="calculate" />
+                <output th:text="'Result: ' + ${result}" />
+            </p>
+        </div>
+        <div class="column right">
+            <h1>Find Sensitivity</h1>
+            <h3>Enter Cm/360:</h3>
+            <input type="text" th:field="*{cm}" />
+            <p>
+                <input type="submit" class="button" name="findSens" value="calculate" />
+                <output th:text="'Result: ' + ${result2}" />
+            </p>
+        </div>
+        <div class="column tutorial">
+            <h1>Tutorial</h1>
+            <h3>Step 1: Pick Game</h3>
+            <h3>Step 2: Enter DPI</h3>
+            <h3>Step 3: Find cm/360 or in-game sensitivity!</h3>
+        </div>
+    </div>
+</form>
+</body>
+</html>
