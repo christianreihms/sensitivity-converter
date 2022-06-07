@@ -1,10 +1,9 @@
 # sensitivity-converter
-> Converter used to calculate FPS mouse sensitivity or centimeter measurement required to do a 360 in-game.
+> Simple web app to convert between mouse DPI, in-game sensitivity, and cm/360.
 
-## General info
-Converter used to calculate FPS mouse sensitivity or centimeter measurement required to do a 360 in-game.
+## Disclaimer
 The Purpose of this application was to practice Spring Boot and Thymeleaf.
-
+The idea of this application is not original, inspiration was taken from other online alternatives.
 
 ## Technologies
 * Spring Boot
@@ -20,3 +19,5 @@ The Purpose of this application was to practice Spring Boot and Thymeleaf.
 * Convert cm/360 to in-game sensitivity
 * Convert in-game sensitivity to cm/360
 * Supports Source, CoD, Overwatch, Valorant, and Fortnite conversions
+
+![image](https://user-images.githubusercontent.com/65569067/172277307-f95c8724-d108-400d-9ee8-e563cd746ba8.png)
